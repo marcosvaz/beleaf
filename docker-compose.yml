@@ -1,0 +1,31 @@
+version : '3.4'
+services :
+
+  api:
+    container_name : 'api'
+    build : ./api
+    ports : 
+      - 3001:3001
+    links :
+      - db
+
+  platform :
+    container_name : 'platform'
+    build : ./platform
+    ports :
+      - "3000:3000"
+
+  db : 
+    container_name : 'db'
+    build : ./db
+    ports :
+      - "3306:3306"
+    environment :
+      - MYSQL_DATABASE=beleaf
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      # Caso deseje adicionar um usuário no banco,
+      # descomente as seguintes linhas, e mude o 'seu_usuário' e a 'sua_senha'
+      # para o usuário e senha desejados
+      # - MYSQL_USER=seu_usuario
+      # - MYSQL_PASSWORD=sua_senha

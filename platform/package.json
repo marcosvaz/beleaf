@@ -1,0 +1,22 @@
+{
+  "name": "platform",
+  "version": "0.0.1",
+  "description": "Beleaf",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcos Vaz",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "http-errors": "^1.7.2",
+    "request": "^2.88.0"
+  }
+}

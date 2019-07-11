@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+    id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nm_user VARCHAR(100) NOT NULL,
+    nm_pass CHAR(32) NOT NULL
+);
+
+DROP TABLE IF EXISTS menu;
+CREATE TABLE menu (
+    id_menu INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nm_name VARCHAR(50) NOT NULL,
+    ds_description VARCHAR(1000) NOT NULL,
+    nr_price FLOAT(8, 3) NOT NULL,
+    ds_ingredients VARCHAR(1000) NOT NULL,
+    nr_stock INT(10) NOT NULL,
+    ds_image_url VARCHAR(300) NOT NULL,
+    nr_discount FLOAT(4, 3)
+);
+
+-- Inserindo elemento no cardápio
+INSERT INTO menu(nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount) VALUES ("Lasanha bolonhesa do futuro", "Um dos pratos mais famosos do mundo acaba de ganhar um novo significado nas mãos da nossa chef. A Lasanha do Futuro™ é feita com massa fresca e sementes de chia, ricas em vitaminas do complexo B, que dão um sabor irresistível à composição. As camadas de mussarela à base de castanhas dão um efeito cremoso igualzinho ao queijo tradicional, deixando qualquer um com brilho nos olhos e água na boca. O molho de tomate é cuidadosamente preparado com tomates italianos maduros que, combinado à proteína da Fazenda Futuro™, dão um toque especial e suculento à bolonhesa.", 28.90, "Tomate, massa de lasanha, futuro burguer (água, preparado proteíco [proteína texturizada de soja, proteína isolada de soja, proteína de ervilha e farinha de grão de bico/, gordura vegetal, amido modificado, cebola, condimento preparado sabor carne, sal, açúcar, beterraba em pó, estabilizante metilcelulose, aroma natural e antioxidante ácido asórbico), mussarela de castanha (água, castanha de caju, óleo de coco, fermentado de semente de quinoa, polvilho doce, sal, massa de soja fermentada, suco de limão, alho em pó, lecitina de soja, goma xantana, kappa carragena, acidulante ácido lático), azeite de oliva, sal. CONTÉM GLÚTEN.", 20, "https://veganja.vteximg.com.br/arquivos/ids/155804/Lasanha-do-Futuro.jpg?v=636967347182430000", 0.00);
+INSERT INTO menu(nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount) VALUES ("Nhoque de Batatas com Shiitake e Espinafre", "O 'mangia che te fa bene' nunca se encaixou tão bem em um prato. Isso porque nosso nhoque de batatas é feito com massa fresca, e vem acompanhado de shiitake e espinafre, alimentos ricos em vitaminas do complexo B. Além disso, o prato é fortalecido com proteína isolada de ervilha, que ajuda na recuperação muscular. Pra fechar, o molho branco de castanha de caju, com mostarda dijon e tomate deixam a combinação cremosa e cheia de sabor. Impossível não mangiare tutto. Quem diria, hein nonna?", 26.30, "Nhoque de batata, castanha de caju, tomate, espinafre, shiitake, proteína de ervilha isolada, mostarda djon, polvilho doce, azeite de oliva, cebola, alho, sal. Pode conter traços de glúten.", 20, "https://veganja.vteximg.com.br/arquivos/ids/155803/Nhoque.jpg?v=636967346541900000", 0.00);
+INSERT INTO menu(nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount) VALUES ("Minestrone", "Nem só de massa vive a cozinha italiana: o Minestrone é uma sopa típica do país europeu feita com molho de tomate, vagem, abobrinha, cenoura, espinafre e feijão branco. A combinação desses alimentos é rica em vitaminas do complexo B e vitamina C, essenciais nos dias mais frios; além de deixar o prato colorido e saboroso.", 14.90, "Tomate, cenoura, abobrinha, feijão branco, vagem, espinafre, azeite de oliva, cebola, alho, manjericão, orégano, salsinha, pimenta calabresa. Pode conter traços de glúten.", 20, "https://veganja.vteximg.com.br/arquivos/ids/155801/Minestrone.jpg?v=636967344570470000", 0.50);
+INSERT INTO menu(nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount) VALUES ("Risotto ao Funghi e Alho Negro", "Dizem que o Risotto é um prato cheio de segredos. Para atingir o ponto certo, ele é preparado cuidadosamente com cebola e vinho branco, equilibrando a consistência cremosa com o arroz arbóreo al dente. O funghi e o alho negro são responsáveis pelo sabor marcante, além de trazerem fibras e vitaminas do complexo B ao prato. A abóbora cabotiá, rica em potássio, é assada com azeite, fechando a composição.", 26.30, "Abóbora cabotian, arroz arbóreo, funghi seco, vinho branco, mussarela vegana, alho negro, azeite de oliva, cebola, sal. CONTÉM GLÚTEN.", 20, "https://veganja.vteximg.com.br/arquivos/ids/155805/Risotto.jpg?v=636967347568730000", 0.00);
+INSERT INTO menu(nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount) VALUES ("Fondue de Queijo de Castanhas", "Dá pra viver muito bem sem queijo, sabia? Você vai descobrir isso ao provar o nosso saboroso Fondue, que tem uma textura encorpada e um sabor marcante. A fusão de leite de castanhas com a base chevre dá o ponto certo de cremosidade no prato. O toque aromático do fondue fica por conta do vinho branco, que harmoniza muito bem com os outros ingredientes. A adição da levedura nutricional garante o alto valor proteico, e acrescenta fibras e vitaminas do complexo B à composição. Sem dúvida, a pedida certa para os dias mais frios.", 38.90, "água, castanha de caju, vinho branco, óleo de girassol, culturas, fécula de batata, levedura, sal do Himalaia, alho em pó, massa de soja, cebola em pó, suco de limão, semente de urucum e acidulante ácido lático. Pode conter traços de glúten.", 0, "https://veganja.vteximg.com.br/arquivos/ids/155807/Fondue.jpg?v=636967348708370000", 0.00);
+
+-- Inserindo elemento nos usuários
+INSERT INTO users(nm_user, nm_pass) VALUES ("beleaf", "21232f297a57a5a743894a0e4a801fc3");

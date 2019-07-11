@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Beleaf - <%= api[id].nm_name %></title>
+	<link rel="icon" href="https://veganja.vteximg.com.br/arquivos/favicon.png?v=636586070653670000" type="image/png">
+
+  <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="../vendors/Magnific-Popup/magnific-popup.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="/"><img src="https://veganja.vteximg.com.br/arquivos/logo-rodape.png?v=636546311106170000" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+
+  <!--================Hero Banner Section start =================-->
+  <section class="hero-banner">
+    <div class="hero-wrapper">
+      <div class="hero-left" style="padding-top: 5%;">
+        <h1 class="hero-title"><%= api[id].nm_name %></h1>
+        <div class="d-sm-flex flex-wrap">
+          <p><%= api[id].ds_description %></p>
+          <% if(api[id].nr_discount != 0){ %>   
+            <h4 class="price-tag"><s style="color: gray;">R$<%= parseFloat(api[id].nr_price).toFixed(2).replace('.', ',') %></s> R$<%= (parseFloat(api[id].nr_price) * parseFloat(api[id].nr_discount)).toFixed(2).replace('.', ',') %></h4>
+          <% } else{ %>
+            <h4 class="price-tag">R$<%= parseFloat(api[id].nr_price).toFixed(2).replace('.', ',') %></h4>
+          <% } %>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="owl-carousel owl-theme hero-carousel">
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="<%= api[id].ds_image_url %>>" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================Hero Banner Section end =================-->
+
+  <!--================Featured Section Start =================-->
+  <section class="section-margin mb-lg-100">
+    <div class="container">
+      <div class="section-intro mb-75px">
+        <h4 class="intro-title">Ingredientes</h4>
+        <h2>Os ingredientes deste prato</h2>
+      </div>
+      <div class="hero-wrapper">
+        <p><%= api[id].ds_ingredients %></p>
+      </div>
+    </div>
+  </section>
+  <!--================Featured Section End =================-->
+
+  <!--================Featured Section Start =================-->
+  <section class="section-margin mb-lg-100">
+    <div class="container">
+      <div class="section-intro mb-75px">
+        <h4 class="intro-title">Relacionados</h4>
+        <h2>Experimente também</h2>
+      </div>
+
+      <div class="owl-carousel owl-theme featured-carousel">
+        <% for(var i = 0; i < 5; i++){ %>
+          <% if(!parseFloat(api[i].nr_stock) == 0){ %>
+          <div class="featured-item">
+            <img class="card-img rounded-0" src="<%= api[i].ds_image_url; %>" alt="">
+            <div class="item-body">
+              <a href="/marmita/<%= i+1 %>">
+                <h3><%= api[i].nm_name %></h3>
+              </a>
+              <div class="d-flex justify-content-between">
+                <% if(api[i].nr_discount != 0){ %>
+                  <h3 class="price-tag"><s style="color: gray;">R$<%= parseFloat(api[i].nr_price).toFixed(2).replace('.', ',') %></s> R$<%= (parseFloat(api[i].nr_price) * parseFloat(api[i].nr_discount)).toFixed(2).replace('.', ',') %></h3>
+                <% } else { %>
+                  <h3 class="price-tag">R$<%= parseFloat(api[i].nr_price).toFixed(2).replace('.', ',') %></h3>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </section>
+  <!--================Featured Section End =================-->
+  
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area section-gap" style="padding: 20px">
+		<div class="container">
+			<div class="footer-bottom row align-items-center text-center text-lg-left">
+				<p class="footer-text m-0 col-lg-8 col-md-12">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Teste para BELEAF INDÚSTRIA E COMÉRCIO DE ALIMENTOS LTDA
+</p>
+			</div>
+		</div>
+	</footer>
+  <!-- ================ End footer Area ================= -->
+
+  <script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="../vendors/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+  <script src="../js/jquery.ajaxchimp.min.js"></script>
+  <script src="../js/mail-script.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
