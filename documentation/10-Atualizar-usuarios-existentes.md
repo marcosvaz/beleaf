@@ -11,7 +11,7 @@ Na seção sobre API, usaremos o [Postman](https://www.getpostman.com/downloads/
 * Escolha "x-www-form-urlencoded"
 * Insira os elementos "nm_user" e "nm_pass" nas KEY's
 * Nos VALUE's, coloque os valores que você deseja alterar em cada campo
-* Aperte SEND para enviar a requisição, e abaixo no Body, deve aparecer o ID do elemento alterado igual o seguinte:
+* Aperte SEND para enviar a requisição, e abaixo no Body, deve aparecer o ID do elemento alterado semelhante ao seguinte:
 ```json
 1
 ```

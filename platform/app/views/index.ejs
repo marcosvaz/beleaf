@@ -48,7 +48,7 @@
       </div>
       <div class="hero-right">
         <div class="owl-carousel owl-theme hero-carousel">
-          <% for(var i = 0; i < 5; i++){ %>
+          <% for(var i = 0; i < 3; i++){ %>
           <div class="hero-carousel-item">
             <img class="img-fluid" src="<%= api[i].ds_image_url %>" alt="">
           </div>
@@ -65,6 +65,18 @@
       <div class="section-intro mb-75px">
         <h4 class="intro-title">Nossas Comidas</h4>
         <h2>Saudável, gostosa e pronta em minutos</h2>
+      </div>
+      <div class="blog_right_sidebar">
+        <div class="single_sidebar_widget tag_cloud_widget">
+          <ul class="list">
+            <li>
+              <a href="/orderbyname">Ordernar por nome</a>
+            </li>
+            <li>
+              <a href="/orderbyprice">Ordernar por preço</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="row">
         <% for(var i = 0; i < api.length; i++){ %>

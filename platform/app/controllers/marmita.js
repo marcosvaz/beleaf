@@ -3,7 +3,7 @@ module.exports.index = function (application, req, res, id) {
 
     var request = require('request');
 
-    const hostname = "http://apibeleaf-env.nuydu3iia5.us-east-2.elasticbeanstalk.com";
+    const hostname = "http://192.168.99.100:3001";
     const path = "/marmitas";
 
     request((hostname + path), (err, response, body) => {

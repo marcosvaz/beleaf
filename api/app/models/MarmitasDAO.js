@@ -32,6 +32,18 @@ MarmitasDAO.prototype.getMarmitasSpecific = function (id, callback) {
     this._connection.query('SELECT nm_name, ds_description, nr_price, ds_ingredients, nr_stock, ds_image_url, nr_discount FROM menu WHERE id_menu = ?', id, callback);
 }
 
+// ORDER BY name
+MarmitasDAO.prototype.getMarmitasByName = function (callback) {
+    console.log('MYSQL : MarmitasDAO.getMarmitasByName');
+    this._connection.query('SELECT * FROM menu ORDER BY nm_name', callback);
+}
+
+// ORDER BY price
+MarmitasDAO.prototype.getMarmitasByPrice = function (callback) {
+    console.log('MYSQL : MarmitasDAO.getMarmitasByPrice');
+    this._connection.query('SELECT * FROM menu ORDER BY nr_price', callback);
+}
+
 module.exports = function(){
     console.log('MODEL : MarmitasDAO');
     return MarmitasDAO;

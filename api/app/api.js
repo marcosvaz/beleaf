@@ -4,12 +4,12 @@ module.exports = function(application, req, res){
     
     var conn = application.config.dbConnection(); // Conexão com o banco
 
+    application.get('/', function (req, res) {
+        res.status(200).send('API online!');
+    });
+
     var MarmitasDAO = new application.app.models.MarmitasDAO(conn); // Marmitas
     var UsuariosDAO = new application.app.models.UsuariosDAO(conn); // Usuários
-
-    application.get('/', function (req, res) {
-        res.send('API online!');
-    });
 
     // MARMITAS
     // CREATE
@@ -26,8 +26,8 @@ module.exports = function(application, req, res){
     });
     // READ
     application.get('/marmitas', function(req, res) {
-        MarmitasDAO.getMarmitas(function(error, result){
-            if(error){
+        MarmitasDAO.getMarmitas(function (error, result) {
+            if (error) {
                 res.status(400).send(error);
             } else {
                 res.status(200).send(result);
@@ -56,10 +56,20 @@ module.exports = function(application, req, res){
             }
         });
     });
-    // READ SPECIFIC
-    application.get('/marmitas/:id', function(req, res){
-        MarmitasDAO.getMarmitasSpecific(req.params.id, function(error, result){
-            if(error){
+    // ORDER BY name
+    application.get('/marmitas/orderbyname', function (req, res) {
+        MarmitasDAO.getMarmitasByName(function (error, result) {
+            if (error) {
+                res.status(400).send(error);
+            } else {
+                res.status(200).send(result);
+            }
+        });
+    });
+    // ORDER BY price
+    application.get('/marmitas/orderbyprice', function (req, res) {
+        MarmitasDAO.getMarmitasByPrice(function (error, result) {
+            if (error) {
                 res.status(400).send(error);
             } else {
                 res.status(200).send(result);

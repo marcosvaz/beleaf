@@ -11,7 +11,7 @@ Na seção sobre API, usaremos o [Postman](https://www.getpostman.com/downloads/
 * Escolha "x-www-form-urlencoded"
 * Insira os elementos "nm_name", "ds_description", "nr_price", "ds_ingredients", "nr_stock", "ds_image_url" e "nr_discount" nas KEY's
 * Nos VALUE's, coloque os valores que você deseja em cada campo
-* Aperte SEND para enviar a requisição, e abaixo no Body, deve aparecer o ID do elemento inserido igual o seguinte:
+* Aperte SEND para enviar a requisição, e abaixo no Body, deve aparecer o ID do elemento inserido semelhante ao seguinte:
 ```json
 2
 ```

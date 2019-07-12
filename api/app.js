@@ -15,7 +15,9 @@
 
 var app = require('./config/server');
 
-app.set('port', (process.env.PORT || 3000));
+var port = process.env.PORT || 3000;
+
+app.set('port', port);
 
 app.listen(app.get('port'), function () {
     console.log('Server online at port ' + app.get('port'));
