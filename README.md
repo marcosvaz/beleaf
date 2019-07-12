@@ -32,7 +32,7 @@ Para cache seria utilizado o Redis, pois ele é um sistema de cache distribuído
 3. [Atualizar items do cardápio (Necessita do Auth Token)](/documentation/4-Atualizar-items-do-cardapio.md)
 4. [Deletar items do cardápio (Necessita do Auth Token)](/documentation/5-Deletar-items-do-cardapio.md)
 5. [Ordenar items por nome](/documentation/6-Ordenar-items-por-nome.md)
-6. [Ordenar items por preço](/documentation/6-Ordenar-items-por-preco.md)
+6. [Ordenar items por preço](/documentation/7-Ordenar-items-por-preco.md)
 
 #### Usuários
 1. [Mostrar todos os usuários](/documentation/7-Mostrar-todos-os-usuarios.md)
