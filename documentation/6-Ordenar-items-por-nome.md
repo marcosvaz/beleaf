@@ -4,7 +4,7 @@ Na seção sobre API, usaremos o [Postman](https://www.getpostman.com/downloads/
 &nbsp;
 
 ## Abra o Postman e realize login/registro ou simplesmente clique para pular a etapa.
-* Após entrar no Postman, feche o popup, e insira a url "http://192.168.99.100:300/orderbyname" no local escrito Enter a request URL
+* Após entrar no Postman, feche o popup, e insira a url "http://192.168.99.100:300/marmitas/orderbyname" no local escrito Enter a request URL
 * Aperte SEND para enviar a requisição, e abaixo no Body, deve aparecer um JSON semelhante ao seguinte:
 ```json
 [
