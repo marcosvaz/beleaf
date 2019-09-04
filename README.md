@@ -3,12 +3,6 @@ Plataforma para teste de conhecimento pela [Beleaf](https://beleaf.com.br).
 
 &nbsp;
 
-### URL's do projeto
-A plataforma está rodando neste link [Beleaf - Home](http://bit.ly/2YWlzog)  
-E a API está rodando neste link [Beleaf - API](http://bit.ly/2YIA4Mu)  
-
-&nbsp;
-
 ### Linguagens e motivos de escolha
 As linguagens escolhidas foram:  
 NodeJS com Express, por ser simples e de bom entendimento, além de ser rápido de implementar o modelo MVC e mudar para outras linguagens.  
